@@ -1,5 +1,5 @@
 def merge(arr1, arr2):
-    global count
+    count = 0
     left = 0
     right = 0
     merged = []
@@ -16,28 +16,33 @@ def merge(arr1, arr2):
             right += 1
     merged += arr1[left:]
     merged += arr2[right:]
-    return merged
+    return merged, count
 
 
 def mergeSort(arr):
 
+    count = 0
+
     if len(arr) <= 1:
-        return arr
+        return arr, count
 
     mid = len(arr)//2
+
     # Sort the first half - low to mid
-    left = mergeSort(arr[:mid])
+    left, count_left = mergeSort(arr[:mid])
 
     # Sort the second half - mid+1 to high
-    right = mergeSort(arr[mid:])
+    right, count_right = mergeSort(arr[mid:])
 
-    return merge(left, right)
+    final, count_merge = merge(left, right)
+
+    count = count + count_left + count_right + count_merge
+
+    return final, count
 
 
 def countInversions(arr):
-    global count
-    count = 0
-    mergeSort(arr)
+    final, count = mergeSort(arr)
     return count
 
 
