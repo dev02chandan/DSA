@@ -6,10 +6,6 @@ def countPairs(arr, low, mid, high):
             right += 1
         count += (right-(mid+1))
 
-    right = mid+1
-
-    left = low
-    right = mid+1
     return count
 
 
