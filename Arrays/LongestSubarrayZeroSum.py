@@ -1,38 +1,48 @@
-from math import *
-from collections import *
-from sys import *
-from os import *
+def longestSubarrayWithSumK(a, k: int) -> int:
+    total = a[0]           # Variable to track the sum of the subarray
+    maxi = 0               # Variable to store the maximum length of subarray with sum k
+    i = 0                  # Pointer for the start index of the subarray
+    j = 0                  # Pointer for the end index of the subarray
+
+    while i < len(a) and j < len(a):
+        if total == k:                        # If the current subarray sum is equal to k
+            # Update the maximum length if necessary
+            maxi = max(j - i + 1, maxi)
+            j += 1                            # Move the end pointer to the right
+            if j < len(a):
+                # Add the next element to the subarray sum
+                total += a[j]
+        elif total < k or i == j:              # If the subarray sum is less than k or the subarray has only one element
+            j += 1                            # Move the end pointer to the right
+            if j < len(a):
+                # Add the next element to the subarray sum
+                total += a[j]
+        else:                                 # If the subarray sum is greater than k
+            # Subtract the element at the start index from the subarray sum
+            total -= a[i]
+            i += 1                            # Move the start pointer to the right
+
+    # Return the maximum length of the subarray with sum k
+    return maxi
 
 
-def LongestSubsetWithZeroSum(arr):
-    # Check if the array is empty
-    if not arr:
-        return 0
+# Test Cases
+arr = [1, 2, 3, 4, 5]
+k = 9
+print(longestSubarrayWithSumK(arr, k))  # Expected output: 2
 
-    # Create a dictionary to store the cumulative sum as the key and the index as the value
-    mapp = {}
+arr = [3, 1, 4, 2, 1, 2, 1, 3, 2]
+k = 6
+print(longestSubarrayWithSumK(arr, k))  # Expected output: 4
 
-    # Initialize variables for the total sum and length of the longest subset
-    total = 0
-    length = 0
+arr = [1, 2, 3, 4, 5]
+k = 15
+print(longestSubarrayWithSumK(arr, k))  # Expected output: 5
 
-    # Iterate over each element in the array
-    for i in range(len(arr)):
-        # Calculate the cumulative sum by adding the current element to the total
-        total += arr[i]
+arr = [-1, -2, -3, -4, -5]
+k = -8
+print(longestSubarrayWithSumK(arr, k))  # Expected output: 3
 
-        # Check if the total sum is zero, indicating a subset with zero sum
-        if total == 0:
-            length = i + 1
-
-        # Check if the total sum is already present in the dictionary
-        if total in mapp:
-            # Update the length of the longest subset if necessary
-            length = max(i - mapp[total], length)
-
-        else:
-            # Add the total sum and its index to the dictionary
-            mapp[total] = i
-
-    # Return the length of the longest subset with zero sum
-    return length
+arr = [2, 4, 6, 8, 10]
+k = 5
+print(longestSubarrayWithSumK(arr, k))  # Expected output: 0
