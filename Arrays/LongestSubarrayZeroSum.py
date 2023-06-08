@@ -1,3 +1,9 @@
+from math import *
+from collections import *
+from sys import *
+from os import *
+
+
 def LongestSubsetWithZeroSum(arr):
     # Check if the array is empty
     if not arr:
@@ -6,7 +12,7 @@ def LongestSubsetWithZeroSum(arr):
     # Create a dictionary to store the cumulative sum as the key and the index as the value
     mapp = {}
 
-    # Initialize variables for the total sum, length of the longest subset, and current length
+    # Initialize variables for the total sum and length of the longest subset
     total = 0
     length = 0
 
@@ -17,10 +23,7 @@ def LongestSubsetWithZeroSum(arr):
 
         # Check if the total sum is zero, indicating a subset with zero sum
         if total == 0:
-            # Update the dictionary with the element and its index
-            mapp[arr[i]] = i
-            # Update the length of the longest subset if necessary
-            length = max(i+1, length)
+            length = i + 1
 
         # Check if the total sum is already present in the dictionary
         if total in mapp:
@@ -33,8 +36,3 @@ def LongestSubsetWithZeroSum(arr):
 
     # Return the length of the longest subset with zero sum
     return length
-
-
-arr = [4, 2, -3, 1, 6]
-print(LongestSubsetWithZeroSum(arr))
-# Expected output: 2
