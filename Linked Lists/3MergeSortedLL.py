@@ -1,3 +1,5 @@
+# Python TC - 95.27% SC - 92.29% on coding ninjas
+
 from math import *
 from collections import *
 from sys import *
