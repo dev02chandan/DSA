@@ -1,4 +1,4 @@
-# Normal Code - O(n) and O(n)
+# Optimal Solution
 
 class Node:
     def __init__(self, val):
@@ -37,12 +37,15 @@ def createCycle(head, a, b):
 
 # utility function to detect cycle
 def cycleDetect(head):
-    hashTable = set()
-    while head != None:
-        if head in hashTable:
+    if head == None:
+        return False
+    fast = head
+    slow = head
+    while fast.next != None and fast.next.next != None:
+        fast = fast.next.next
+        slow = slow.next
+        if fast == slow:
             return True
-        hashTable.add(head)
-        head = head.next
     return False
 
 
