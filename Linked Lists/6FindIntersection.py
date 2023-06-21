@@ -7,39 +7,24 @@ class Node:
 
 
 def findIntersection(firstHead, secondHead):
-    myset = set()  # Set to store the addresses of nodes
-    if firstHead == secondHead:
-        return firstHead
-    myset.add(id(firstHead))
-    myset.add(id(secondHead))
+    if firstHead == None or secondHead == None:
+        return None
 
-    while firstHead.next != None and secondHead.next != None:
-        if id(firstHead.next) in myset:
-            return firstHead.next
+    dummy1 = firstHead
+    dummy2 = secondHead
 
-        firstHead = firstHead.next
-        myset.add(id(firstHead))
+    while (dummy1 != dummy2):
+        if dummy1 == None:
+            dummy1 = secondHead
+        else:
+            dummy1 = dummy1.next
 
-        if id(secondHead.next) in myset:
-            return secondHead.next
+        if dummy2 == None:
+            dummy2 = firstHead
+        else:
+            dummy2 = dummy2.next
 
-        secondHead = secondHead.next
-        myset.add(id(secondHead))
-
-    # Checking for remaining nodes in the linked lists
-    while firstHead.next != None:
-        if id(firstHead.next) in myset:
-            return firstHead.next
-
-        firstHead = firstHead.next
-
-    while secondHead.next != None:
-        if id(secondHead.next) in myset:
-            return secondHead.next
-
-        secondHead = secondHead.next
-
-    return None
+    return dummy1
 
 
 # Test Case 1: Linked lists have an intersection
