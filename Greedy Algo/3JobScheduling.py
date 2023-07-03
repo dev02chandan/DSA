@@ -42,7 +42,7 @@ def jobScheduling(jobs):
 
 # Testcase
 jobs = [[4, 70], [1, 90], [2, 60], [3, 80], [1, 120], [2, 100]]
-print(jobScheduling(jobs))  # Output: 380
+print(jobScheduling(jobs))  # Output: 370
 
 # Time Complexity: O(N^2), where N is the number of jobs
 # Space Complexity: O(N), for the array to keep track of the scheduled jobs
