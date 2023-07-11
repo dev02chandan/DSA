@@ -1,13 +1,12 @@
-ds = [1, 2, 3]
-ans = []
-ans.append(ds)
-ds = [1, 2]
-ans.append(ds)
-print(ans)
+def isPallindrome(string, start, end):
+    while start <= end:
+        if string[start] != string[end]:
+            return False
+        start += 1
+        end -= 1
+    return True
 
-ds = [1, 2, 3]
-ans = []
-ans.append(ds[:])
-ds = [1, 2]
-ans.append(ds[:])
-print(ans)
+
+string = "abc"
+print(string)
+print(isPallindrome(string, 0, 0))
