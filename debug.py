@@ -1,3 +1,3 @@
-n = 4
-upperDiagonal = [0]*(2*n-1)
-print(upperDiagonal)
+board = [[1, 3, 4], [2, 5, 6], [7, 8, 9]]
+print(board[1])
+print(board[:][1])
