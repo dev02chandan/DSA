@@ -94,3 +94,21 @@ for i in range(n):
 1
 '''
 
+n = 3
+for i in range(n):
+    for j in range(n-i-1):
+        print(' ',end='')
+    for j in range(2*i+1):
+        print('*', end='')
+    for j in range(n-i-1):
+        print(' ', end='')
+    print()
+
+
+#     *      i=0 4 spaces => 5-0-1 spaces
+#    ***     i=1 3 spaces => 5-1-1 spaces
+#   *****    i=2 2 spaces => ...
+#  *******   i=3 1 spaces
+# *********  i=4 0 spaces => n-i-1 spaces
+
+
