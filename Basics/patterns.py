@@ -129,6 +129,7 @@ for i in range(n):
 #   *    i=2  spaces=2
 '''
 
+'''
 n = 4
 
 for i in range(n):
@@ -158,3 +159,22 @@ for i in range(n):
 #  ***** 
 #   ***  
 #    *   
+'''
+
+
+
+n = 4
+for i in range(1, n+1):
+    for j in range(i):
+        print('*', end='')
+    print()
+for i in range(n-1, 0, -1):
+    for j in range(i):
+        print('*', end='')
+    print()
+
+#   *  
+#   **
+#   ***  
+#   **
+#   * 
