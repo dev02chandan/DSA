@@ -94,6 +94,7 @@ for i in range(n):
 1
 '''
 
+'''
 n = 3
 for i in range(n):
     for j in range(n-i-1):
@@ -110,5 +111,20 @@ for i in range(n):
 #   *****    i=2 2 spaces => ...
 #  *******   i=3 1 spaces
 # *********  i=4 0 spaces => n-i-1 spaces
+'''
 
+'''
+n = 4
+for i in range(n):
+    for j in range(i):
+        print(' ', end='')
+    for j in range(2*(n-i)-1):
+        print('*', end='')
+    for j in range(i):
+        print(' ', end='')
+    print()
 
+# *****  i=0  spaces=0 => spaces = i 
+#  ***   i=1  spaces=1 => stars = n-i
+#   *    i=2  spaces=2
+'''
