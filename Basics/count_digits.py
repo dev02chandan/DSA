@@ -10,3 +10,6 @@ print(int(math.log10(n) + 1))
 
 print("--- %s seconds ---" % (time.time() - start_time))
 
+# TC O(log_10(N) + 1)
+# SC O(1)
+

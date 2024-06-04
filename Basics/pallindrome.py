@@ -1,5 +1,5 @@
-num = 12340
-# print(int(str(num)[::-1]))
+num = 10340
+num2 = 12321
 
 def reversed(num):
     revNum = 0
@@ -10,5 +10,11 @@ def reversed(num):
             break   
     return revNum
 
-print(reversed(num))
+def isPall(num):
+    return reversed(num) == num
 
+print(isPall(num))
+print(isPall(num2))
+
+# TC O(log_10(N) + 1)
+# SC O(1)
