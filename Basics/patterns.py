@@ -267,3 +267,27 @@ for i in range(n):
 
 
 '''
+
+'''
+n = 6
+variable = 65
+for i in range(n):
+    for j in range(i+1):
+        print(chr(variable), end=' ')
+        variable+=1 
+    print()
+    variable=65
+
+
+
+A
+A B
+A B C
+
+A 
+A B 
+A B C 
+A B C D 
+A B C D E 
+A B C D E F 
+'''
