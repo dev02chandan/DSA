@@ -291,3 +291,47 @@ A B C D
 A B C D E 
 A B C D E F 
 '''
+
+
+
+'''
+
+n = 6
+var = 65
+for i in range(n):
+    for j in range(n-i):
+        print(chr(var), end='')
+        var += 1
+    var = 65
+    print()
+
+A B C
+A B
+A
+ABCDEF
+ABCDE
+ABCD
+ABC
+AB
+A
+
+'''
+
+n = 6
+for i in range(n):
+    for j in range(i+1):
+        print(chr(65+i), end='\t')
+    print()
+
+'''
+A
+B B
+C C C
+
+A
+B       B
+C       C       C
+D       D       D       D
+E       E       E       E       E
+F       F       F       F       F       F
+'''
