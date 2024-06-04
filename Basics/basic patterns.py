@@ -162,7 +162,7 @@ for i in range(n):
 '''
 
 
-
+'''
 n = 4
 for i in range(1, n+1):
     for j in range(i):
@@ -178,3 +178,42 @@ for i in range(n-1, 0, -1):
 #   ***  
 #   **
 #   * 
+'''
+
+'''
+# Method 1
+# n = 5
+# binary = 1
+# first = 1
+# for i in range(n):
+#     for j in range(i+1):
+#         if j == 0: 
+#             print(first, ' ', end='')
+#             continue
+#         print(binary, ' ', end='')
+#         binary = 0 if binary==1 else 1
+#     print()
+#     first = 0 if first==1 else 1
+
+# Method 2 
+# n = 5
+# binary = 1
+# for i in range(n):
+#     binary = 1 if i%2==0 else 0
+#     for j in range(i+1):
+#         print(binary, end=' ')
+#         binary= 0 if binary==1 else 1
+#     print()
+        
+
+1      # j=0, i=0
+0 1    # j=0,1, i=1
+1 0 1  # j=0,1,2, i=2
+
+1 
+0 1 
+1 0 1 
+0 1 0 1 
+1 0 1 0 1 
+'''
+
