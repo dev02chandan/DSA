@@ -317,13 +317,14 @@ A
 
 '''
 
+'''
 n = 6
 for i in range(n):
     for j in range(i+1):
         print(chr(65+i), end='\t')
     print()
 
-'''
+
 A
 B B
 C C C
@@ -334,4 +335,182 @@ C       C       C
 D       D       D       D
 E       E       E       E       E
 F       F       F       F       F       F
+'''
+
+
+
+'''
+
+n = 3
+var = 65
+for i in range(n):
+    for j in range(n-i-1):
+        print(' ', end='')
+    for j in range(i+1):
+        print(chr(var),end='')
+        var+=1
+    var-=2
+    for j in range(i):
+        print(chr(var), end='')
+        var-=1
+    for j in range(n-i-1):
+        print(' ', end='')
+    print()
+    var=65
+  A         i=0     j=0,1,  2   3,4
+ ABA        i=1     j=0,  1,2,3,  4
+ABCBA       i=2     j=  0,1,2,3,4
+
+     A     
+    ABA    
+   ABCBA   
+  ABCDCBA  
+ ABCDEDCBA 
+ABCDEFEDCBA
+'''
+
+
+'''
+
+n = 6
+var = 65 + n - 1 
+
+for i in range(n):
+    for j in range(i+1):
+        print(chr(var), end='')
+        var-=1
+    print()
+    var = 65 + n -1
+
+C
+CB
+CBA
+
+F
+FE
+FED
+FEDC
+FEDCB
+FEDCBA
+'''
+
+
+
+
+'''
+
+n = 3
+for i in range(n):
+    for j in range(n-i):
+        print('*', end='')
+    for j in range(2*i):
+        print(' ', end='')
+    for j in range(n-i):
+        print('*', end='')
+    print()
+
+for i in range(n):
+    for j in range(i+1):
+        print('*', end='')
+    for j in range(2*(n-i-1)):
+        print(end=' ')
+    for j in range(i+1):
+        print('*', end='')  
+    print()
+
+******
+**  **
+*    *
+*    *
+**  **
+******
+
+************
+*****  *****
+****    ****
+***      ***
+**        **
+*          *
+*          *
+**        **
+***      ***
+****    ****
+*****  *****
+************
+'''
+
+'''
+n = 6
+for i in range(n):
+    for j in range(n):
+        if i==0 or i==n-1:
+            print('*', end='')
+        else:
+            if j==0 or j==n-1:
+                print('*', end='')
+            else:
+                print(' ', end='')
+    print()
+
+
+***
+* *
+***
+
+******
+*    *
+*    *
+*    *
+*    *
+******
+'''
+
+
+'''
+
+n = 6
+var = n
+for i in range(n):
+    for j in range(i):
+        print(var, end='')
+        var -= 1
+    for j in range(2*n-2*i-1):
+        print(var, end='')
+    for j in range(i):
+        var += 1
+        print(var, end='')
+    print()
+
+for i in range(n-2, -1, -1): # 1, 0
+    for j in range(i):
+        print(var, end='')
+        var -= 1
+    for j in range(2*n-2*i-1):
+        print(var, end='')
+    for j in range(i):
+        var += 1
+        print(var, end='')
+    print()
+
+    
+j    0 1 2 3 4  sum
+i
+0    3 3 3 3 3  
+1    3 2 2 2 3 
+2    3 2 1 2 3 
+3    3 2 2 2 3 
+4    3 3 3 3 3
+
+
+6 6 6 6 6 6 6 6 6 6 6   i=0
+6 5 5 5 5 5 5 5 5 5 6   i=1
+6 5 4 4 4 4 4 4 4 5 6   i=2
+6 5 4 3 3 3 3 3 4 5 6 
+6 5 4 3 2 2 2 3 4 5 6 
+6 5 4 3 2 1 2 3 4 5 6 
+6 5 4 3 2 2 2 3 4 5 6 
+6 5 4 3 3 3 3 3 4 5 6 
+6 5 4 4 4 4 4 4 4 5 6 
+6 5 5 5 5 5 5 5 5 5 6 
+6 6 6 6 6 6 6 6 6 6 6
 '''
